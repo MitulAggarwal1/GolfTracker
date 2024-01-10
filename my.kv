@@ -1,0 +1,128 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: 0.6, 0.4, 0.2, 1  # Brown background
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            source: r"C:\Users\mitul\OneDrive\GolfApp\logo.jpeg"  # Replace with the path to your logo image file
+            size_hint: 1, 0.8
+        
+<HowToUseScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Step 1: Click on the "Track" page'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 2: Click "Upload video". This will upload the video of your golf swing'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 3: Your stats will be presented to you'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 4: To see your previous stats, go to the "History and Settings" page. Here you will see all your previous shots'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Button:
+            text: 'Go to Track'
+            on_press: root.manager.current = 'track'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+        Button:
+            text: 'Go to History and Settings'
+            on_press: root.manager.current = 'history_settings'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+
+
+<TrackScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: club_input
+            hint_text: 'Please select club'
+            size_hint_y: None
+            height: '30dp'
+        TextInput:
+            id: video_path_input
+            hint_text: 'Please provide the path to your swing video'
+            size_hint_y: None
+            height: '30dp'
+        Button:
+            text: 'Upload video'
+            on_press: root.upload_video(args[0])  
+            background_color: 0, 1, 0, 1  # Set the button color to green
+            size_hint_y: None
+            height: '50dp'
+        Button:
+            text: 'Go to How to use'
+            on_press: root.manager.current = 'how_to_use'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+            size_hint_y: None
+            height: '50dp'
+        Button:
+            text: 'Go to History and Settings'
+            on_press: root.manager.current = 'history_settings'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+            size_hint_y: None
+            height: '50dp'
+        Label:
+            id: output_label
+            text: ''
+            text_size: self.width, None  # wrap text at this width
+            size_hint_y: None
+            height: self.texture_size[1]  # set height to the height of the text (plus padding)
+
+<HistorySettingsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: 0, 1, 0, 1  # Set the button color to green
+        Label:
+            text: 'Profile'
+        Label:
+            text: 'Settings'
+        Label:
+            text: 'Updates'
+        Label:
+            text: 'Data Usage'
+        Label:
+            text: 'Help & Support'
+        Label:
+            text: 'Advanced Settings'
+        Button:
+            text: 'My Bag'
+            on_press: root.manager.current = 'my_bag'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+        Button:
+            text: 'Go to How to use'
+            on_press: root.manager.current = 'how_to_use'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+        Button:
+            text: 'Go to Track'
+            on_press: root.manager.current = 'track'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+
+<MyBagScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Step 1: Click on the "Track" page'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 2: Click "Upload video". This will upload the video of your golf swing'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 3: Your stats will be presented to you'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Label:
+            text: 'Step 4: To see your previous stats, go to the "History and Settings" page. Here you will see all your previous shots'
+            text_size: self.width, None  # Adjust the text size to the width of the Label
+        Button:
+            text: 'Go to Track'
+            on_press: root.manager.current = 'track'
+            background_color: 0, 1, 0, 1  # Set the button color to green
+        Button:
+            text: 'Go to History and Settings'
+            on_press: root.manager.current = 'history_settings'
+            background_color: 0, 1, 0, 1  # Set the button color to green
